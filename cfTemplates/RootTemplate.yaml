@@ -80,14 +80,14 @@ Resources:
   NetworkStack:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Join [ "/", [ 'https://github.com/mtmoura/dynamoDB-data-replication-to-aurora', !Ref S3BucketForAMILookup, 'Networking.yaml' ] ] 
+      TemplateURL: !Join [ "/", [ 'https://s3.amazonaws.com', !Ref S3BucketForAMILookup, 'Networking.yaml' ] ] 
       TimeoutInMinutes: '5'
       Parameters:
         ClassB: !Ref ClassB
   Ec2Stack:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Join [ "/", [ 'https://github.com/mtmoura/dynamoDB-data-replication-to-aurora', !Ref S3BucketForAMILookup, 'ec2-instance.yaml' ] ] 
+      TemplateURL: !Join [ "/", [ 'https://s3.amazonaws.com', !Ref S3BucketForAMILookup, 'ec2-instance.yaml' ] ] 
       TimeoutInMinutes: '30'
       Parameters:
         VpcId: !GetAtt NetworkStack.Outputs.VPC
@@ -102,7 +102,7 @@ Resources:
   DatabaseStack:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Join [ "/", [ 'https://github.com/mtmoura/dynamoDB-data-replication-to-aurora', !Ref S3BucketForAMILookup, 'Aurora.yaml' ] ] 
+      TemplateURL: !Join [ "/", [ 'https://s3.amazonaws.com', !Ref S3BucketForAMILookup, 'Aurora.yaml' ] ] 
       TimeoutInMinutes: '30'
       Parameters:
         VPCId: !GetAtt NetworkStack.Outputs.VPC
