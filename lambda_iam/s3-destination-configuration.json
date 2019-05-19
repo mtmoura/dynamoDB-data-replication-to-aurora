@@ -1,6 +1,6 @@
 {
-  "RoleARN": "arn:aws:iam::AWS_ACCOUNT_NUMBER:role/firehose_delivery_role",
-  "BucketARN": "arn:aws:s3:::BUCKET_NAME",
+  "RoleARN": "arn:aws:iam::744522434650:role/firehose_delivery_role",
+  "BucketARN": "arn:aws:s3:::baicas3",
   "Prefix": "processed/",
   "BufferingHints": {
     "SizeInMBs": 5,
@@ -20,7 +20,7 @@
         "Parameters": [
           {
             "ParameterName": "LambdaArn",
-            "ParameterValue": "arn:aws:lambda:AWS_REGION:AWS_ACCOUNT_NUMBER:function:firehoseDeliveryTransformationFunction"
+            "ParameterValue": "arn:aws:lambda:us-east-1:744522434650:function:firehoseDeliveryTransformationFunction"
           },
           {
             "ParameterName": "NumberOfRetries",
@@ -32,8 +32,8 @@
   },
   "S3BackupMode": "Enabled",
   "S3BackupConfiguration": {
-    "RoleARN": "arn:aws:iam::AWS_ACCOUNT_NUMBER:role/firehose_delivery_role",
-    "BucketARN": "arn:aws:s3:::BUCKET_NAME",
+    "RoleARN": "arn:aws:iam::744522434650:role/firehose_delivery_role",
+    "BucketARN": "arn:aws:s3:::baicas3",
     "Prefix": "tranformation_failed_data_backup/",
     "BufferingHints": {
       "SizeInMBs": 5,
