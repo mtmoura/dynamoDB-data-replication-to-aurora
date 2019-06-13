@@ -1,6 +1,6 @@
 {
   "RoleARN": "arn:aws:iam::744522434650:role/firehose_delivery_role",
-  "BucketARN": "arn:aws:s3:::baicas3",
+  "BucketARN": "arn:aws:s3:::dynamodbtoaurora",
   "Prefix": "processed/",
   "BufferingHints": {
     "SizeInMBs": 5,
@@ -33,7 +33,7 @@
   "S3BackupMode": "Enabled",
   "S3BackupConfiguration": {
     "RoleARN": "arn:aws:iam::744522434650:role/firehose_delivery_role",
-    "BucketARN": "arn:aws:s3:::baicas3",
+    "BucketARN": "arn:aws:s3:::dynamodbtoaurora",
     "Prefix": "tranformation_failed_data_backup/",
     "BufferingHints": {
       "SizeInMBs": 5,
