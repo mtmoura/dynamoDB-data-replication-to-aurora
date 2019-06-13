@@ -10,7 +10,7 @@
                 "s3:ListBucket"
             ],
             "Resource": [
-                "arn:aws:s3:::baicas3/*"
+                "arn:aws:s3:::dynamodbtoaurora/*"
             ]
         }
     ]
